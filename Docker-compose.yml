@@ -1,0 +1,64 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:3.4.6
+    container_name: zookeeper
+    restart: always #Ensures that intermittent failures in the Docker environment do not result in unnecessary failures of the service.
+    networks:
+      - dockerNet
+    ports:
+     - "2181:2181"
+  kafka:
+    build: ./kafka-docker/
+    container_name: kafka
+    restart: always
+    networks:
+      - dockerNet
+    ports:
+     - "9092:9092"
+    expose:
+     - "9093"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+  producer:
+    build: ./producer/.
+    image: producer
+    container_name: producer
+    restart: always   
+    environment:
+      - TOPICNAME=test
+      - KAFKAPORT=kafka:9093
+      - RTSPLINK=rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
+        # Image format = RGBA, uint8
+        # Num of channels = 3
+        # Total pixels = 38400
+        # Image size = [160 240]
+        # Num of rows = 160
+        # Num of cols = 240
+    networks:
+      - dockerNet
+        # To ensure that the containers in different docker-compose files communicate with each other, we place them on the same network. The complete network name is 'zookeeper_dockerNet'. It is derived by joining the name of the folder from which the network originates (i.e., zookeeper) and the name of the network (i.e., dockerNet).
+  consumer:
+    build: ./consumer/.
+    image: consumer
+    container_name: consumer
+    restart: always   
+    environment:
+      - KAFKAPORT=kafka:9093
+      - TOPICNAME=test
+      - ZOOKEEPERPORT=zookeeper:2181 
+      - CONSUMERGROUP=consumerGroup_1
+    ports:
+      - "5001:5001"
+    networks:
+      - dockerNet
+        # To ensure that the containers in different docker-compose files communicate with each other, we place them on the same network. The complete network name is 'zookeeper_dockerNet'. It is derived by joining the name of the folder from which the network originates (i.e., zookeeper) and the name of the network (i.e., dockerNet).
+networks:
+  dockerNet:
+    driver: bridge

@@ -1,6 +1,4 @@
-# Project Title
-
-RTSP Video Streaming Application - From Producer to Consumer
+# RTSP Video Streaming Application - From Producer to Consumer
 
 ## Getting Started
 

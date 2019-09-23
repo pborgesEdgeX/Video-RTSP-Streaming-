@@ -41,7 +41,7 @@ Operating system:
 ### Overall Architecture
 With this demo, we are building an application of a complete producer to consumer video streaming. We picked the sample video from a RTSP source via URL to be streamed via a Producer inside the full_app-dockerNet network. The producer is written in Go with the purpose of efficiently sending frames to the Kafka pipe. Keep in mind some image resizing is needed to ensure the pipe doesn't overload and Sarama lib avoids throwing an exception. In this app, we have two consumers. One consumer runs inside the container network talking to the Kafka pipe through kaka:9093 port. The other is designed to be run from the localhost accessing the Kafka pipe via localhost:9092. In both cases, we generated a docker image and a local environment containing the same packages mostly including popular Computer Vision framework (OpenCV) and popular ML/DL frameworks (TF, Keras, Theano and Caffe).
 
-![Alt text](readme_img/output.jpg?raw=true "Output")
+![Alt text](readme_img/output.jpeg?raw=true "Output")
 
 ### Installing
 
@@ -56,7 +56,7 @@ $ docker-compose up
 
 When you execute the docker compose command, the producer, Kafka pipe and consumers containers will be created and begin to execute. You should see an output similar to this:
 
-![Alt text](readme_img/kafka_architecture.jpg?raw=true "System Architecture")
+![Alt text](readme_img/kafka_architecture.jpeg?raw=true "System Architecture")
  
 
 At this point, you may want to run a consumer from your localhost. In this case, you should utilize our bash script:

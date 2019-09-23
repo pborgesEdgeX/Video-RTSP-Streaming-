@@ -20,6 +20,12 @@ var outputWriter io.Writer = os.Stdout
 // Instantiate a producer
 var producer sarama.AsyncProducer
 
+// Instantiate the Kafka topic
+var ntopic string = "test"
+
+// Instantiate the RSTP Link
+var rstp_link = "rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream"
+
 func main() {
 	//Sarama logger
 	sarama.Logger = log.New(outputWriter, "[saramaLog]", log.Ltime)
@@ -35,7 +41,7 @@ func main() {
 	defer func() { producer.Close() }()
 
 	// Capture video
-	webcam, err := gocv.OpenVideoCapture(os.Getenv("RTSPLINK"))
+	webcam, err := gocv.OpenVideoCapture(rstp_link)
 	if err != nil {
 		panic("Error in opening webcam: " + err.Error())
 	}
@@ -74,7 +80,7 @@ func main() {
 			log.Fatal("Json marshalling error. Error:", err.Error())
 		}
 		msg := &sarama.ProducerMessage{
-			Topic:     os.Getenv("TOPICNAME"),
+			Topic:     ntopic,
 			Value:     sarama.ByteEncoder(docBytes),
 			Timestamp: time.Now(),
 		}
@@ -82,7 +88,7 @@ func main() {
 		producer.Input() <- msg
 
 		//Print time of receiving each image to show the code is running
-		fmt.Fprintf(outputWriter, "---->>>> %v\n", time.Now())
+		fmt.Fprintf(outputWriter, "Sending Camera 1 Bytes ---->>>> %v\n", time.Now())
 	}
 }
 

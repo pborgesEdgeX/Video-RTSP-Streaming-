@@ -132,7 +132,7 @@ If you find any issues creating a topic, you can repeat the installation process
 
 First, make sure sure you have the Kafka container up and running (your container should have a different ID than mine):
 
-![Alt text](readme_img/containerup.jpeg?raw=true "Container Check")
+![Alt text](readme_img/containerup.jpg?raw=true "Container Check")
 
 Now, it's time to access the Kafka container:
 

@@ -72,9 +72,9 @@ These commands run the producer locally.
 
 Once the system is up and running, you can see the consumers running on a Flask powered web-server.
 
-The consumer inside the Docker network can be accessed: http://0.0.0.0:5001
+The consumer **inside the Docker network** can be accessed: http://0.0.0.0:5001
 
-The consumer running from the localhost can be accessed: http://0.0.0.0:5000
+The consumer **running from the localhost** can be accessed: http://0.0.0.0:5000
 
 ## Deployment on Edge Servers
 

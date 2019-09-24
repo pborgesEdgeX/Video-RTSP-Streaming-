@@ -105,7 +105,7 @@ b = bytes(feed, 'utf-8')
 ## Modules included in Consumers
 | Modules | Versioning | Pull from |
 | :---:   |  :---:     |   :---:   |
-| darknet |   latest.  |    (git)  |
+| darknet |   latest  |    (git)  |
 | python        |3.6    |(apt)|
 | torch         |latest |(git)|
 |chainer       |latest |(pip)|
@@ -123,7 +123,7 @@ b = bytes(feed, 'utf-8')
 | flask		|latest |(pip)|
 | numpy		|latest |(pip)|
 | dlib		|latest |(pip)|
-| facial-recognition| latest (pip)|
+| facial-recognition| latest |(pip)|
 | Jinja2 	|latest |(pip)|
 | pyMongo	|latest |(pip)|
 | h5py		|latest |(pip)|
@@ -169,7 +169,7 @@ We use [SemVer](http://semver.org/) for versioning. The latest version of this c
 
 ## Authors
 
-* **Paulo Borges** - *Initial work* - [MobiledgeX](https://github.com/pborgesEdgeX)
+* **Paulo Borges** *<paulo.borges@mobiledgex.com>*- *Initial work* - [MobiledgeX](https://github.com/pborgesEdgeX)
 
 ## License
 

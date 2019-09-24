@@ -56,7 +56,7 @@ $ docker-compose up
 
 When you execute the docker-compose command, the producer, Kafka pipe, and consumers containers are created and begin to execute. You should see an output similar to this:
 
-![Alt text](readme_img/output.jpeg?raw=true "Output")
+![Alt text](readme_img/output.jpg?raw=true "Output")
  
 
 At this point, you may want to run a consumer from your localhost. In this case, you should utilize our bash script:
@@ -132,7 +132,7 @@ If you find any issues creating a topic, you can repeat the installation process
 
 First, make sure sure you have the Kafka container up and running (your container should have a different ID than mine):
 
-![Alt text](readme_img/containerup.jpeg?raw=true "Output")
+![Alt text](readme_img/containerup.jpeg?raw=true "Container Check")
 
 Now, it's time to access the Kafka container:
 

@@ -104,7 +104,7 @@ b = bytes(feed, 'utf-8')
 ```
 ## Modules included in Consumers
 | Modules | Versioning | Pull from |
-| :---:   |  :---:     |   :---:   |
+| :------:   |  :------:     |   :------:   |
 | darknet |   latest  |    (git)  |
 | python        |3.6    |(apt)|
 | torch         |latest |(git)|

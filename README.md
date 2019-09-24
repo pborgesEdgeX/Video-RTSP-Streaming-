@@ -91,6 +91,36 @@ $ chmod u+x deploy_consumer_edge.sh
 $ ./deploy_consumer_edge.sh <USERNAME>
 ```
 
+## Adding your IP
+If you wish to modify the consumer, go ahead and cd into the /consumer folder. In there, you will find the main.py file. Add your own custom ML/DL algorithms where you have direct access to the image pixels in the get_stream() function:
+```
+feed = msg.value.get("pix")
+```
+
+Or Bytes: 
+```
+b = bytes(feed, 'utf-8')
+```
+
+## Troubleshooting
+If you find any issues creating a topic, you can repeat the installation process and create a topic manually. In order to do so, go ahead with the following commands:
+
+First make sure sure you have the Kafka container up and running:
+![Alt text](readme_img/containerup.jpeg?raw=true "Output")
+
+Now, it's time to access the Kafka container:
+
+```
+$ docker exec -i -t -u root $(docker ps | grep full_app_kafka | cut -d' ' -f1) /bin/bash
+```
+And manually create a topic (one single line command):
+```
+$ KAFKA_HOME/bin/kafka-topics.sh --create --partitions 4 --bootstrap-server kafka:9092 --replication-factor 1 --topic test
+```
+If you choose to monitor you consumer from within the container, you can do it so by manually creating a consumer:
+```
+$KAFKA_HOME/bin/kafka-console-consumer.sh --from-beginning --bootstrap-server kafka:9092 --topic=test 
+```
 ## Built With
 
 * [Sarama](https://godoc.org/github.com/Shopify/sarama) - Package sarama is a pure Go client library for dealing with Apache Kafka (versions 0.8 and later).
@@ -98,6 +128,7 @@ $ ./deploy_consumer_edge.sh <USERNAME>
 * [Flask](https://palletsprojects.com/p/flask/) - Consumer Web Server
 * [OpenCV] (https://docs.opencv.org/) - Computer Vision Library in Consumer
 * [Keras] (https://keras.io/) - Deep Learning API in Consumer
+* [Deepo] (hhttps://hub.docker.com/r/ufoym/deepo/) - Series of Deep Learning Frameworks
 
 ## Versioning
 

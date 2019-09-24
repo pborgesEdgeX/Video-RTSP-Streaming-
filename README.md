@@ -103,34 +103,41 @@ Or Bytes:
 b = bytes(feed, 'utf-8')
 ```
 ## Modules included in Consumers
-
-* darknet       latest (git)
-* python        3.6    (apt)
-* torch         latest (git)
-* chainer       latest (pip)
-* mxnet         latest (pip)
-* onnx          latest (pip)
-* pytorch       latest (pip)
-* tensorflow    latest (pip)
-* theano        latest (git)
-* keras         latest (pip)
-* lasagne       latest (git)
-* opencv        4.0.1  (git)
-* sonnet        latest (pip)
-* caffe         latest (git)
-* cntk          latest (pip)
-* flask		latest (pip)
-* numpy		latest (pip)
-* dlib		latest (pip)
-* facial-recognition latest (pip)
-* Jinja2 	latest (pip)
-* pyMongo	latest (pip)
-* h5py		latest (pip)
+| Modules | Versioning | Pull from |
+| :---:   |  :---:     |   :---:   |
+| darknet |   latest.  |    (git)  |
+| python        |3.6    |(apt)|
+| torch         |latest |(git)|
+|chainer       |latest |(pip)|
+| mxnet         |latest |(pip)|
+| onnx          |latest |(pip)|
+| pytorch       |latest |(pip)|
+| tensorflow    |latest |(pip)|
+| theano        |latest |(git)|
+| keras         |latest |(pip)|
+| lasagne       |latest |(git)|
+| opencv        |4.0.1  |(git)|
+| sonnet        |latest |(pip)|
+| caffe         |latest |(git)|
+| cntk          |latest |(pip)|
+| flask		|latest |(pip)|
+| numpy		|latest |(pip)|
+| dlib		|latest |(pip)|
+| facial-recognition| latest (pip)|
+| Jinja2 	|latest |(pip)|
+| pyMongo	|latest |(pip)|
+| h5py		|latest |(pip)|
 
 ## Troubleshooting
 If you find any issues creating a topic, you can repeat the installation process and create a topic manually. To do so, go ahead with the following commands:
 
-First, make sure sure you have the Kafka container up and running (your container should have a different ID than mine):
+First, make sure sure you have the Kafka container up and running by typing:
+
+```
+$ docker ps
+```
+
+You should see the following (your container should have a different ID than mine):
 
 ![Alt text](readme_img/containerup.jpg?raw=true "Container Check")
 

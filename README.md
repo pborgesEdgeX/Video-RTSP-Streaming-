@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions provide you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -36,16 +36,16 @@ $ virtualenv --version
 ```
 ### Tested Environment
 Operating system:
- --> macOS Mojave 10.14.3 (18D109)
+* macOS Mojave 10.14.3 (18D109)
 
 ### Overall Architecture
-With this demo, we are building an application of a complete producer to consumer video streaming. We picked the sample video from a RTSP source via URL to be streamed via a Producer inside the full_app-dockerNet network. The producer is written in Go with the purpose of efficiently sending frames to the Kafka pipe. Keep in mind some image resizing is needed to ensure the pipe doesn't overload and Sarama lib avoids throwing an exception. In this app, we have two consumers. One consumer runs inside the container network talking to the Kafka pipe through kaka:9093 port. The other is designed to be run from the localhost accessing the Kafka pipe via localhost:9092. In both cases, we generated a docker image and a local environment containing the same packages mostly including popular Computer Vision framework (OpenCV) and popular ML/DL frameworks (TF, Keras, Theano and Caffe).
+With this demo, we are building a complete producer to consumer application for video streaming. We picked the sample video from an RTSP source via URL streamed via a Producer inside the full_app-dockerNet network. The producer is written in Go to send frames to the Kafka pipe in the most efficient manner. Keep in mind some image resizing is needed to ensure the pipe doesn't overload and Sarama lib avoids throwing an exception. In this app, we have two consumers. One consumer runs inside the container network talking to the Kafka pipe through kaka:9093 port. The other is designed to be run from the localhost accessing the Kafka pipe via localhost:9092. In both cases, we generated a docker image and a local environment containing the same packages mostly including popular Computer Vision framework (OpenCV) and popular ML/DL frameworks (TF, Keras, Theano and Caffe).
 
 ![Alt text](readme_img/kafka_architecture.jpg?raw=true "Architecture")
 
 ### Installing
 
-In order to get your code up and running, first let's clone the repo locally then compose the project:
+To get your code up and running, first let's clone the repo locally then compose the project:
 
 ```
 $ cd <PATH_OF_CHOICE>
@@ -54,7 +54,7 @@ $ cd full_app/
 $ docker-compose up
 ```
 
-When you execute the docker compose command, the producer, Kafka pipe and consumers containers will be created and begin to execute. You should see an output similar to this:
+When you execute the docker-compose command, the producer, Kafka pipe, and consumers containers are created and begin to execute. You should see an output similar to this:
 
 ![Alt text](readme_img/output.jpeg?raw=true "Output")
  
@@ -65,7 +65,8 @@ At this point, you may want to run a consumer from your localhost. In this case,
 $ chmod u+x consumer-localhost.sh
 $ ./consumer-localhost.sh
 ```
-This will run the producer locally.
+These commands run the producer locally.
+
 
 ## Running 
 
@@ -91,8 +92,8 @@ $ chmod u+x deploy_consumer_edge.sh
 $ ./deploy_consumer_edge.sh <USERNAME>
 ```
 
-## Adding your IP
-If you wish to modify the consumer, go ahead and cd into the /consumer folder. In there, you will find the main.py file. Add your own custom ML/DL algorithms where you have direct access to the image pixels in the get_stream() function:
+## Adding your Algorithms
+If you wish to modify the consumer, go ahead and cd into the /consumer folder. In there, you can find the main.py file. Add your own custom ML/DL algorithms where you have direct access to the image pixels in the get_stream() function:
 ```
 feed = msg.value.get("pix")
 ```
@@ -103,9 +104,10 @@ b = bytes(feed, 'utf-8')
 ```
 
 ## Troubleshooting
-If you find any issues creating a topic, you can repeat the installation process and create a topic manually. In order to do so, go ahead with the following commands:
+If you find any issues creating a topic, you can repeat the installation process and create a topic manually. To do so, go ahead with the following commands:
 
-First make sure sure you have the Kafka container up and running:
+First, make sure sure you have the Kafka container up and running:
+
 ![Alt text](readme_img/containerup.jpeg?raw=true "Output")
 
 Now, it's time to access the Kafka container:
@@ -119,16 +121,16 @@ $ KAFKA_HOME/bin/kafka-topics.sh --create --partitions 4 --bootstrap-server kafk
 ```
 If you choose to monitor you consumer from within the container, you can do it so by manually creating a consumer:
 ```
-$KAFKA_HOME/bin/kafka-console-consumer.sh --from-beginning --bootstrap-server kafka:9092 --topic=test 
+$ KAFKA_HOME/bin/kafka-console-consumer.sh --from-beginning --bootstrap-server kafka:9092 --topic=test 
 ```
 ## Built With
 
 * [Sarama](https://godoc.org/github.com/Shopify/sarama) - Package sarama is a pure Go client library for dealing with Apache Kafka (versions 0.8 and later).
 * [Kafka Apache](http://wurstmeister.github.io/kafka-docker/) - Kafka pipelining
 * [Flask](https://palletsprojects.com/p/flask/) - Consumer Web Server
-* [OpenCV] (https://docs.opencv.org/) - Computer Vision Library in Consumer
-* [Keras] (https://keras.io/) - Deep Learning API in Consumer
-* [Deepo] (hhttps://hub.docker.com/r/ufoym/deepo/) - Series of Deep Learning Frameworks
+* [OpenCV](https://docs.opencv.org/) - Computer Vision Library in Consumer
+* [Keras](https://keras.io/) - Deep Learning API in Consumer
+* [Deepo](https://hub.docker.com/r/ufoym/deepo/) - Series of Deep Learning Frameworks
 
 ## Versioning
 

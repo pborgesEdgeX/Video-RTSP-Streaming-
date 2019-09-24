@@ -129,7 +129,7 @@ b = bytes(feed, 'utf-8')
 | h5py		|latest |(pip)|
 
 ## Troubleshooting
-If you find any issues creating a topic, you can repeat the installation process and create a topic manually. To do so, go ahead with the following commands:
+If you find any issues creating a topic, you can repeat the installation process and create a topic manually. To do so, go ahead with the following steps:
 
 First, make sure sure you have the Kafka container up and running by typing:
 

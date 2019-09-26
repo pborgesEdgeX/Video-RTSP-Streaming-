@@ -1,5 +1,10 @@
 # RTSP Video Streaming Application - From Producer to Consumer
 
+[![GitHub issues](https://img.shields.io/github/issues/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/issues)
+
+[![GitHub forks](https://img.shields.io/github/forks/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/forks)
+
+
 ## Getting Started
 
 These instructions provide you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

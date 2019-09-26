@@ -41,7 +41,7 @@ Operating system:
 ### Overall Architecture
 With this demo, we are building a complete producer to consumer application for video streaming. We picked the sample video from an RTSP source via URL streamed via a Producer inside the full_app-dockerNet network. The producer is written in Go to send frames to the Kafka pipe in the most efficient manner. Keep in mind some image resizing is needed to ensure the pipe doesn't overload and Sarama lib avoids throwing an exception. In this app, we have two consumers. One consumer runs inside the container network talking to the Kafka pipe through kaka:9093 port. The other is designed to be run from the localhost accessing the Kafka pipe via localhost:9092. In both cases, we generated a docker image and a local environment containing the same packages mostly including popular Computer Vision framework (OpenCV) and popular ML/DL frameworks (TF, Keras, Theano and Caffe).
 
-![Alt text](readme_img/kafka_architecture.jpg?raw=true "Architecture")
+![Alt text](readme_img/kafka_architecture_updated.jpeg?raw=true "Architecture")
 
 ### Installing
 

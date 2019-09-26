@@ -1,6 +1,6 @@
 # RTSP Video Streaming Application - From Producer to Consumer
 
-[![GitHub issues](https://img.shields.io/github/issues/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/issues) [![GitHub forks](https://img.shields.io/github/forks/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/forks) [![GitHub license](https://img.shields.io/github/license/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/stargazers)
+[![GitHub license](https://img.shields.io/github/license/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/issues) [![GitHub forks](https://img.shields.io/github/forks/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/forks)  [![GitHub stars](https://img.shields.io/github/stars/pborgesEdgeX/full_app)](https://github.com/pborgesEdgeX/full_app/stargazers)
 
 
 

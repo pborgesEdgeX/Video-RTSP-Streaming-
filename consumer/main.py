@@ -9,10 +9,6 @@ from kafka import KafkaConsumer
 
 W = 512
 H = 288
-# Define Kafka Topic
-topic = "test"
-# print(cv2.__version__)
-
 
 # Instantiate Kafka Consumers
 consumer = KafkaConsumer(
@@ -84,6 +80,7 @@ def video_feed4():
 
 def get_stream():
     print('Listening to Feed 1...')
+    count = 0
     for msg in consumer2:
         # Conversion: base-64 string --> array of bytes --> array of integers
         val = msg.value
@@ -100,11 +97,9 @@ def get_stream():
         imgB = npArray[2::4].reshape((H, W))
         img = np.stack((imgR, imgG, imgB))
         img = np.moveaxis(img, 0, -1)
-        print("ndim: ", img.ndim)
-        print("shape:", img.shape)
-        print("size: ", img.size)
-        # print(img)
         success, a_numpy = cv2.imencode('.jpg', img)
+        count += 1
+        print('Feed 1: Displaying packet {}'.format(count))
         a = a_numpy.tostring()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + a + b'\r\n\r\n')
@@ -112,7 +107,7 @@ def get_stream():
 
 def get_stream2():
     print('Listening to Feed 2...')
-
+    count = 0
     for msg in consumer:
         # Conversion: base-64 string --> array of bytes --> array of integers
         val = msg.value
@@ -129,11 +124,10 @@ def get_stream2():
         imgB = npArray[2::4].reshape((H, W))
         img = np.stack((imgR, imgG, imgB))
         img = np.moveaxis(img, 0, -1)
-        print("ndim: ", img.ndim)
-        print("shape:", img.shape)
-        print("size: ", img.size)
         success, a_numpy = cv2.imencode('.jpg', img)
         a = a_numpy.tostring()
+        count += 1
+        print('Feed 2: Displaying packet {}'.format(count))
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + a + b'\r\n\r\n')
 
@@ -144,7 +138,7 @@ def rgb2gray(rgb):
 
 def get_stream3():
     print('Listening to Feed 3...')
-
+    count = 0
     for msg in consumer3:
         # Conversion: base-64 string --> array of bytes --> array of integers
         val = msg.value
@@ -165,14 +159,16 @@ def get_stream3():
         img = np.stack((imgR, imgG, imgB))
         img = np.moveaxis(img, 0, -1)
         success, a_numpy = cv2.imencode('.jpg', img)
-        # edges = cv2.Canny(a_numpy,100,200)
         a = a_numpy.tostring()
+        count += 1
+        print('Feed 3: Displaying packet {}'.format(count))
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + a + b'\r\n\r\n')
 
 
 def get_stream4():
     print('Listening to Feed 4...')
+    count = 0
     for msg in consumer4:
         # Conversion: base-64 string --> array of bytes --> array of integers
         val = msg.value
@@ -218,6 +214,8 @@ def get_stream4():
 
         success, a_numpy = cv2.imencode('.jpg', img)
         a = a_numpy.tostring()
+        count += 1
+        print('Feed 4: Displaying packet {}'.format(count))
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + a + b'\r\n\r\n')
 

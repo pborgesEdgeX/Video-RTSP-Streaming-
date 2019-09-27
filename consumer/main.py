@@ -21,7 +21,7 @@ consumer = KafkaConsumer(
     enable_auto_commit=True,
     group_id='my-group-1',
     value_deserializer=lambda m: loads(m.decode('utf-8')),
-    bootstrap_servers=['localhost:9092'])
+    bootstrap_servers=['kafka:9093'])
 
 consumer2 = KafkaConsumer(
     'test',
@@ -29,7 +29,7 @@ consumer2 = KafkaConsumer(
     enable_auto_commit=True,
     group_id='my-group-1',
     value_deserializer=lambda m: loads(m.decode('utf-8')),
-    bootstrap_servers=['localhost:9092'])
+    bootstrap_servers=['kafka:9093'])
 
 # Instantiate Kafka Consumers
 consumer3 = KafkaConsumer(
@@ -38,7 +38,7 @@ consumer3 = KafkaConsumer(
     enable_auto_commit=True,
     group_id='my-group-1',
     value_deserializer=lambda m: loads(m.decode('utf-8')),
-    bootstrap_servers=['localhost:9092'])
+    bootstrap_servers=['kafka:9093'])
 
 consumer4 = KafkaConsumer(
     'test',
@@ -46,7 +46,7 @@ consumer4 = KafkaConsumer(
     enable_auto_commit=True,
     group_id='my-group-1',
     value_deserializer=lambda m: loads(m.decode('utf-8')),
-    bootstrap_servers=['localhost:9092'])
+    bootstrap_servers=['kafka:9093'])
 
 # Set the App to be Flask based
 app = Flask(__name__)
@@ -223,4 +223,4 @@ def get_stream4():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='5000', debug=True)
+    app.run(host='0.0.0.0', port='5001', debug=True)

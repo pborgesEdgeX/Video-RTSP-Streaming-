@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  #Producer to obtain data from RTSP and write into Kafka queue
+  producer2:
+    image: producer2
+    container_name: producer2
+    networks:
+      - full_app_dockerNet
+        # To ensure that the containers in different docker-compose files communicate with each other, we place them on the same network. The complete network name is 'zookeeper_dockerNet'. It is derived by joining the name of the folder from which the network originates (i.e., zookeeper) and the name of the network (i.e., dockerNet).
+    privileged: true  
+
+networks:
+  full_app_dockerNet:
+    external: true #Label the other docker-compose network as an external network to the current docker-compose file
+

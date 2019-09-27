@@ -53,7 +53,7 @@ func main() {
 			continue
 		}
 
- 		resultImage := gocv.NewMatWithSize(240, 160, gocv.MatTypeCV8U)
+ 		resultImage := gocv.NewMatWithSize(512, 288, gocv.MatTypeCV8U)
 		gocv.Resize(frame, &resultImage, image.Pt(resultImage.Rows(), resultImage.Cols()), 0, 0, gocv.InterpolationCubic)
 
 		// Type assert frame into RGBA image

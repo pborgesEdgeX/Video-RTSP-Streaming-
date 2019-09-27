@@ -44,21 +44,30 @@ services:
     networks:
       - dockerNet
         # To ensure that the containers in different docker-compose files communicate with each other, we place them on the same network. The complete network name is 'zookeeper_dockerNet'. It is derived by joining the name of the folder from which the network originates (i.e., zookeeper) and the name of the network (i.e., dockerNet).
+  producer2:
+    build: ./producer_2/.
+    image: producer2
+    container_name: producer2
+    restart: always   
+    environment:
+      - TOPICNAME=test
+      - KAFKAPORT=kafka:9093
+      - RTSPLINK=rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream
+        # Image format = RGBA, uint8
+        # Num of channels = 3
+        # Total pixels = 38400
+        # Image size = [160 240]
+        # Num of rows = 160
+        # Num of cols = 240
+    networks:
+      - dockerNet
   consumer:
     build: ./consumer/.
     image: consumer
     container_name: consumer
     restart: always   
-    environment:
-      - KAFKAPORT=kafka:9093
-      - TOPICNAME=test
-      - ZOOKEEPERPORT=zookeeper:2181 
-      - CONSUMERGROUP=consumerGroup_1
-    ports:
-      - "5001:5001"
     networks:
       - dockerNet
-        # To ensure that the containers in different docker-compose files communicate with each other, we place them on the same network. The complete network name is 'zookeeper_dockerNet'. It is derived by joining the name of the folder from which the network originates (i.e., zookeeper) and the name of the network (i.e., dockerNet).
 networks:
   dockerNet:
     driver: bridge

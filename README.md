@@ -153,11 +153,11 @@ $ docker exec -i -t -u root $(docker ps | grep full_app_kafka | cut -d' ' -f1) /
 ```
 And manually create a topic (one single line command):
 ```
-$ $KAFKA_HOME/bin/kafka-topics.sh --create --partitions 4 --bootstrap-server kafka:9092 --replication-factor 1 --topic test
+bash-4.4# $KAFKA_HOME/bin/kafka-topics.sh --create --partitions 4 --bootstrap-server kafka:9092 --replication-factor 1 --topic test
 ```
 If you choose to monitor you consumer from within the container, you can do it so by manually creating a consumer:
 ```
-$ $KAFKA_HOME/bin/kafka-console-consumer.sh --from-beginning --bootstrap-server kafka:9092 --topic=test 
+bash-4.4# $KAFKA_HOME/bin/kafka-console-consumer.sh --from-beginning --bootstrap-server kafka:9092 --topic=test 
 ```
 ## Built With
 

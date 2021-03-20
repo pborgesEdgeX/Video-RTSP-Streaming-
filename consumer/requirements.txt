@@ -8,7 +8,7 @@ face-recognition==1.2.3
 face-recognition-models==0.3.0
 Flask==1.1.1
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 opencv-contrib-python==4.1.0.25
 Pillow==6.1.0
@@ -31,7 +31,7 @@ imageio==2.5.0
 ipython==7.7.0
 ipython-genutils==0.2.0
 jedi==0.14.1
-Jinja2==2.10.1
+Jinja2==2.11.3
 joblib==0.13.2
 Keras==2.2.4
 Keras-Applications==1.0.7

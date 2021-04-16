@@ -174,7 +174,7 @@ We use [SemVer](http://semver.org/) for versioning. The latest version of this c
 
 ## Authors
 
-* **[Paulo Borges](https://www.linkedin.com/in/pborges1/)** - *Initial work* - [MobiledgeX](https://github.com/pborgesEdgeX)
+* **[Paulo Borges](https://www.linkedin.com/in/pborges1/)** - *Initial work* (https://github.com/pborgesEdgeX)
 
 ## License
 

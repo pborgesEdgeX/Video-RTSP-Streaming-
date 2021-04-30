@@ -71,7 +71,7 @@ termcolor==1.1.0
 tf-estimator-nightly==1.14.0.dev2019060501
 Theano==1.0.4
 traitlets==4.3.2
-urllib3==1.25.3
+urllib3==1.25.8
 wcwidth==0.1.7
 Werkzeug==0.15.5
 wget==3.2

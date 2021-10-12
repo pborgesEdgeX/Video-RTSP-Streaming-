@@ -1,6 +1,6 @@
 numpy==1.16.4
 kafka-python
-opencv_python==3.4.3.18
+opencv_python==3.4.7.28
 python-dotenv==0.10.3
 Click==7.0
 dlib==19.17.0

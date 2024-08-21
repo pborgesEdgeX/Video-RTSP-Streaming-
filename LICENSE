@@ -1,21 +1,56 @@
-MIT License
+Copyrights Paulo Borges 2024
 
-Copyright (c) 2019 Paulo Borges
+Version 1.0, August 2024
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Definitions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+	•	“Licensor” refers to Paulo Borges, the owner and copyright holder of all https://github.com/pborgesEdgeX repositories.
+	•	“Software” refers to the source code, binary executables, associated documentation, and any other files within all https://github.com/pborgesEdgeX repositories.
+	•	“You” or “Your” refers to the individual or entity exercising permissions granted by this License.
+	•	“NonCommercial” refers to any activity or use that is not primarily intended for or directed towards commercial advantage or monetary compensation.
+
+2. Grant of Rights
+
+Subject to the terms and conditions of this License, the Licensor hereby grants You a non-exclusive, non-transferable, royalty-free, worldwide license to:
+
+	•	a. Use the Software solely for personal, academic, or research purposes.
+	•	b. Modify the Software to create derivative works for non-commercial purposes, provided that You include a prominent notice in all such derivative works stating that they are based on the original Software.
+	•	c. Distribute copies of the original Software or modified versions thereof, provided that such distributions are made under the terms of this License and include a copy of this License.
+
+3. Restrictions
+
+	•	a. You may not use the Software, or any derivative works based on the Software, for commercial purposes. This includes, but is not limited to, selling, licensing, or otherwise exploiting the Software or derivative works for any commercial advantage or monetary compensation.
+	•	b. You may not sublicense the Software to any third party.
+	•	c. You may not use the Software as part of a service or product that is sold, licensed, or otherwise exploited for any commercial gain.
+
+4. Redistribution
+
+You may distribute copies of the Software or modifications thereof, provided that You meet the following conditions:
+
+	•	a. You must provide a copy of this License with every copy of the Software or modifications thereof that You distribute.
+	•	b. You must retain, in the source form of the Software, all copyright, patent, trademark, and attribution notices that are present in the Software.
+
+5. Disclaimer of Warranty
+
+The Software is provided “as is,” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Licensor be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Software or the use or other dealings in the Software.
+
+6. Limitation of Liability
+
+In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall the Licensor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Software (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such party shall have been informed of the possibility of such damages.
+
+7. Termination
+
+This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Upon termination, You must immediately cease all use of the Software and destroy all copies of the Software in Your possession or control.
+
+8. Miscellaneous
+
+	•	a. This License constitutes the entire agreement between the parties with respect to the Software licensed here. It supersedes any prior agreements or understandings, whether written or oral, regarding the subject matter of this License.
+	•	b. If any provision of this License is held to be unenforceable, that provision shall be reformed only to the extent necessary to make it enforceable.
+
+9. Governing Law
+
+This License shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.
+
+This license explicitly restricts any commercial use of your software while allowing personal, academic, or research use under specific conditions.

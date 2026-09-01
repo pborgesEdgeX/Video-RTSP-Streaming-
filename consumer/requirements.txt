@@ -33,7 +33,7 @@ ipython-genutils==0.2.0
 jedi==0.14.1
 Jinja2==2.10.1
 joblib==0.13.2
-Keras==2.2.4
+Keras==3.15.0
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
 kiwisolver==1.1.0
